@@ -1,0 +1,19 @@
+{
+  "name": "algos",
+  "version": "1.0.0",
+  "description": "sandbox for all my algos",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Theqwertypusher/algos.git"
+  },
+  "author": "jason victor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Theqwertypusher/algos/issues"
+  },
+  "homepage": "https://github.com/Theqwertypusher/algos#readme"
+}
