@@ -1,7 +1,6 @@
 /**
 Builds up the sort by gradually creating a larger left half which is always sorted
 */
-
 const insertionSort = (arr) => {
   for (let i = 1; i < arr.length; i++) {
     let temp = arr[i];
