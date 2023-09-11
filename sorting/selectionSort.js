@@ -22,4 +22,8 @@ const selectionSort = (arr) => {
 };
 
 // test cases
-console.log(selectionSort([2, 1, 3, 4, 5, 2]));
+// console.log(selectionSort([2, 1, 3, 4, 5, 2]));
+
+module.exports = {
+  selectionSort,
+};
