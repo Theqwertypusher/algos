@@ -15,4 +15,8 @@ const insertionSort = (arr) => {
 };
 
 // test cases
-console.log(insertionSort([2, 1, 3, 4, 5, 2]));
+// console.log(insertionSort([2, 1, 3, 4, 5, 2]));
+
+module.exports = {
+  insertionSort,
+};
