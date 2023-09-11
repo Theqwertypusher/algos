@@ -4,7 +4,8 @@
   "description": "sandbox for all my algos",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "check": "node ./sorting/comparison"
   },
   "repository": {
     "type": "git",
