@@ -1,7 +1,6 @@
 /**
-Creates a singlyLinkedList
+Creates node for linkedList
 */
-
 class Node {
   constructor(val) {
     this.val = val;
@@ -9,6 +8,9 @@ class Node {
   }
 }
 
+/**
+Creates a singlyLinkedList
+*/
 class SinglyLinkedList {
   constructor(val) {
     this.head = new Node(val);
@@ -38,13 +40,33 @@ class SinglyLinkedList {
     this.tail = newTail;
     this.tail.next = null;
     this.length--;
+    if (this.length === 0) {
+      this.head = null;
+      this.tail = null;
+    }
     return current;
+  }
+  shift() {
+    if (!this.head) return undefined;
+    let curNode = this.head;
+    this.head = curNode.next;
+    this.length--;
+    if (this.length === 0) {
+      this.tail = null;
+    }
+    return curNode;
+  }
+
+  log() {
+    let idx = 0;
+    let curNode = this.head;
+    while (curNode.next) {
+      console.log(`Node ${idx}`, curNode.val);
+      idx++;
+      curNode = curNode.next;
+    }
   }
 }
 
 const obj = new SinglyLinkedList("jason");
-obj.push("alexander ").push("victor");
-
-console.log("log...obj =>", obj.head);
-console.log("log...pop =>", obj.pop());
-console.log("log...obj =>", obj);
+console.log(obj.push("alexander ").push("victor").shift());
