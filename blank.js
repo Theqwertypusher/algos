@@ -1,15 +1,6 @@
-/* 
+const pivot = (arr, low, high) => {};
 
-one sentence descriptions of algorithms and patterns
-bubble, selection nested loops to check for highest value or lowest value
-insertion sorts - iterates array and sorts the array left of the iterator
-merge sort - uses helper function to merge; recursion to split 
-quick sort - uses helper pivot function initially based on last element. 
-Swaps all numbers less and returns index which is the index that is sorted. 
-Quick sort. Recursively calls pivot before and after the initial pivot index. And returns arr
-*/
-
-const func = (arr) => {
+const func = (arr, low = 0, high = arr.length - 1) => {
   return arr;
 };
 
