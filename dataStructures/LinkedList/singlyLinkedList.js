@@ -70,16 +70,33 @@ class SinglyLinkedList {
     return this;
   }
 
+  get(idx) {
+    if (idx <= 0) return null;
+    let curNode = this.head;
+    let pointer = 0;
+    while (pointer < idx) {
+      curNode = curNode.next;
+      pointer++;
+    }
+    return curNode.val;
+  }
+
+  /**
+  Logs each node of linked list
+  */
   log() {
     let idx = 0;
     let curNode = this.head;
-    while (curNode.next) {
+    while (idx < this.length) {
       console.log(`Node ${idx}`, curNode.val);
       idx++;
       curNode = curNode.next;
     }
+    console.log(`Length: ${this.length} `);
   }
 }
 
 const obj = new SinglyLinkedList("jason");
-console.log(obj.push("alexander ").push("victor"));
+obj.push("alexander").push("victor").unshift("BABY JAY");
+console.log("get 2", obj.get(2));
+obj.log();
