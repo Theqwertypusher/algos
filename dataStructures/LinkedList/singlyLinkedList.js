@@ -57,6 +57,19 @@ class SinglyLinkedList {
     return curNode;
   }
 
+  unshift(val) {
+    let newNode = new Node(val);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+    this.length++;
+    return this;
+  }
+
   log() {
     let idx = 0;
     let curNode = this.head;
@@ -69,4 +82,4 @@ class SinglyLinkedList {
 }
 
 const obj = new SinglyLinkedList("jason");
-console.log(obj.push("alexander ").push("victor").shift());
+console.log(obj.push("alexander ").push("victor"));
