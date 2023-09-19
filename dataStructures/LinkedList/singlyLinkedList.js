@@ -78,7 +78,14 @@ class SinglyLinkedList {
       curNode = curNode.next;
       pointer++;
     }
-    return curNode.val;
+    return curNode;
+  }
+
+  set(val, idx) {
+    const curNode = this.get(idx);
+    if (!curNode) return false;
+    curNode.val = val;
+    return true;
   }
 
   /**
@@ -97,6 +104,7 @@ class SinglyLinkedList {
 }
 
 const obj = new SinglyLinkedList("jason");
-obj.push("alexander").push("victor").unshift("BABY JAY");
-console.log("get 2", obj.get(2));
+obj.push("alexander").push("victor").unshift("BABY JAY").unshift("THIS IS");
+console.log(obj.get(3));
+console.log(obj.set("hello", 3));
 obj.log();
