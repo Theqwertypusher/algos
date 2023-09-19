@@ -88,6 +88,15 @@ class SinglyLinkedList {
     return true;
   }
 
+  insert(val, idx) {
+    const newNode = new Node(val);
+    const curNode = this.get(idx - 1);
+    newNode.next = curNode.next;
+    curNode.next = newNode;
+    this.length++;
+    return this;
+  }
+
   /**
   Logs each node of linked list
   */
@@ -107,4 +116,5 @@ const obj = new SinglyLinkedList("jason");
 obj.push("alexander").push("victor").unshift("BABY JAY").unshift("THIS IS");
 console.log(obj.get(3));
 console.log(obj.set("hello", 3));
+obj.insert("INSERTION", 3);
 obj.log();
