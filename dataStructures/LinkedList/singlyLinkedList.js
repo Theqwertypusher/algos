@@ -112,6 +112,18 @@ class SinglyLinkedList {
     return this;
   }
 
+  map() {
+    let curNode = this.head;
+    let idx = 0;
+    const result = [];
+    while (idx < this.length) {
+      result.push(curNode.val);
+      curNode = curNode.next;
+      idx++;
+    }
+    return result;
+  }
+
   /**
   Logs each node of linked list
   */
@@ -133,4 +145,5 @@ obj.push("alexander").push("victor").unshift("BABY JAY").unshift("THIS IS");
 obj.insert("INSERTION", 3);
 obj.log();
 obj.reverse();
+console.log(obj.map());
 obj.log();
