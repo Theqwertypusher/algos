@@ -97,6 +97,21 @@ class SinglyLinkedList {
     return this;
   }
 
+  reverse() {
+    let node = this.head;
+    this.head = this.tail;
+    this.tail = node;
+    let next;
+    let prev = null;
+    for (let i = 0; i < this.length; i++) {
+      next = node.next;
+      node.next = prev;
+      prev = node;
+      node = next;
+    }
+    return this;
+  }
+
   /**
   Logs each node of linked list
   */
@@ -114,7 +129,8 @@ class SinglyLinkedList {
 
 const obj = new SinglyLinkedList("jason");
 obj.push("alexander").push("victor").unshift("BABY JAY").unshift("THIS IS");
-console.log(obj.get(3));
-console.log(obj.set("hello", 3));
+
 obj.insert("INSERTION", 3);
+obj.log();
+obj.reverse();
 obj.log();
