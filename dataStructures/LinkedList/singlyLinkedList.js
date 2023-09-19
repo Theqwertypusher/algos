@@ -12,23 +12,62 @@ class Node {
 Creates a singlyLinkedList
 */
 class SinglyLinkedList {
-  constructor(val) {
-    this.head = new Node(val);
-    this.tail = this.head;
-    this.length = 1;
+  constructor(listOfValues) {
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+
+    if (Array.isArray(listOfValues)) {
+      for (const val of listOfValues) {
+        this.push(val);
+      }
+    }
+  }
+
+  // Returns length
+  size() {
+    return this.length;
+  }
+
+  // Returns the head
+  head() {
+    return this.head?.val ?? null;
+  }
+
+  // Returns the tail
+  tail() {
+    return this.tail?.val ?? null;
+  }
+
+  // Return if the list is empty
+  isEmpty() {
+    return this.length === 0;
+  }
+  // add a node at first it to linklist
+  addFirst(val) {
+    const node = new Node(val);
+    // Check if its the first element
+    if (this.head === null) {
+      this.tail = node;
+    }
+    // Adding node at the start of the list and increase the length
+    node.next = this.head;
+    this.head = node;
+    this.length++;
+    return this.size();
   }
 
   push(val) {
-    const node = new Node(val);
-    if (!this.head) {
-      this.head = node;
-      this.tail = node;
-    } else {
-      this.tail.next = node;
-      this.tail = node;
+    // Check if its the first val
+    if (this.head === null) {
+      return this.addFirst(val);
     }
+    const node = new Node(val);
+    // Adding node at the end of the list and increase the length
+    this.tail.next = node;
+    this.tail = node;
     this.length++;
-    return this;
+    return this.size();
   }
   pop() {
     let current = this.head;
@@ -139,11 +178,8 @@ class SinglyLinkedList {
   }
 }
 
-const obj = new SinglyLinkedList("jason");
-obj.push("alexander").push("victor").unshift("BABY JAY").unshift("THIS IS");
+const obj = new SinglyLinkedList(
+  "My name is the qwerty pusher and these are my repos".split(" ")
+);
 
-obj.insert("INSERTION", 3);
-obj.log();
-obj.reverse();
 console.log(obj.map());
-obj.log();
